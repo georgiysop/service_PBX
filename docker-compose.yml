@@ -1,0 +1,48 @@
+version: '3.5'
+services:
+
+  babev_01:
+    image: img_py:v1
+    build: ./PBX_Nec
+    tty: True
+    container_name: PBX_01
+    environment:
+      IP_ADRESS: 10.45.101.10
+    volumes:
+      -  './PBX_Nec:/code/PBX_Nec'
+      -  './sqlite:/code/sqlite/'
+    networks:
+      -  base_network
+    restart: unless-stopped
+
+    babushkino_02:
+    image: img_py:v1
+    build: ./PBX_Nec
+    tty: True
+    container_name: PBX_02
+      IP_ADRESS: 10.45.102.10
+    volumes:
+      -  './PBX_Nec:/code/PBX_Nec'
+      -  './sqlite:/code/sqlite/'
+    networks:
+      -  base_network
+    restart: unless-stopped
+
+    belozersk_03:
+    image: img_py:v1
+    build: ./PBX_Nec
+    tty: True
+    container_name: PBX_03
+      IP_ADRESS: 10.45.103.10
+    volumes:
+      -  './PBX_Nec:/code/PBX_Nec'
+      -  './sqlite:/code/sqlite/'
+    networks:
+      -  base_network
+    restart: unless-stopped
+
+
+networks:
+ base_network:
+  driver: bridge
+
