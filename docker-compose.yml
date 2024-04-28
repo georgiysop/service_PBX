@@ -7,7 +7,7 @@ services:
     tty: True
     container_name: PBX_01
     environment:
-      IP_ADRESS: 10.45.101.10
+      IP_ADRESS: 192.168.0.1
     volumes:
       -  './PBX_Nec:/code/PBX_Nec'
       -  './sqlite:/code/sqlite/'
@@ -20,7 +20,7 @@ services:
     build: ./PBX_Nec
     tty: True
     container_name: PBX_02
-      IP_ADRESS: 10.45.102.10
+      IP_ADRESS: 192.168.0.2
     volumes:
       -  './PBX_Nec:/code/PBX_Nec'
       -  './sqlite:/code/sqlite/'
@@ -33,7 +33,7 @@ services:
     build: ./PBX_Nec
     tty: True
     container_name: PBX_03
-      IP_ADRESS: 10.45.103.10
+      IP_ADRESS: 192.168.0.3
     volumes:
       -  './PBX_Nec:/code/PBX_Nec'
       -  './sqlite:/code/sqlite/'
